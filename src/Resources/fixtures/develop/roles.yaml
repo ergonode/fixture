@@ -1,14 +1,3 @@
-Ergonode\CategoryTree\Domain\Entity\CategoryTreeId:
-    category_tree_id:
-        __construct:
-            - '<Uuid()>'
-
-Ergonode\CategoryTree\Domain\Entity\CategoryTree:
-    category_tree:
-        __construct:
-            - '@category_tree_id'
-            - 'default'
-
 Ergonode\Account\Domain\Entity\RoleId:
     superadmin_role_id:
         __construct:
@@ -186,19 +175,3 @@ Ergonode\Account\Domain\Entity\Role:
                 - '<privilege("MULTIMEDIA_READ")>'
                 - '<privilege("MULTIMEDIA_UPDATE")>'
                 - '<privilege("MULTIMEDIA_DELETE")>'
-
-Ergonode\Account\Domain\ValueObject\Password:
-    superadmin_user_password:
-        __construct:
-            - 'iBt0Q5mZ++oT3LnTkrazXHUkoiE=' # 123
-
-Ergonode\Account\Domain\Entity\User:
-    superadmin:
-        __construct:
-            - '<userId(test@ergonode.com)>'
-            - 'Johnny'
-            - 'Bravo'
-            - '<userEmail(test@ergonode.com)>'
-            - '<language(EN)>'
-            - '@superadmin_user_password'
-            - '@superadmin_role_id'
