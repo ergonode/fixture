@@ -9,28 +9,26 @@ declare(strict_types = 1);
 
 namespace Ergonode\Fixture\Infrastructure\Faker;
 
-use Ergonode\Category\Domain\Entity\CategoryId;
-use Ergonode\Category\Domain\ValueObject\CategoryCode;
+use Ergonode\Workflow\Domain\Entity\WorkflowId;
 use Faker\Provider\Base as BaseProvider;
 
 /**
  */
-class CategoryIdFaker extends BaseProvider
+class WorkflowIdFaker extends BaseProvider
 {
     /**
      * @param string|null $code
      *
-     * @return CategoryId
+     * @return WorkflowId
      *
      * @throws \Exception
      */
-    public function categoryId(?string $code = null): CategoryId
+    public function workflowId(?string $code = null): WorkflowId
     {
-
         if ($code) {
-            return CategoryId::fromCode(new CategoryCode($code));
+            return WorkflowId::fromCode($code);
         }
 
-        return CategoryId::generate();
+        return WorkflowId::generate();
     }
 }
