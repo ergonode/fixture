@@ -9,22 +9,20 @@ declare(strict_types = 1);
 
 namespace Ergonode\Fixture\Infrastructure\Faker;
 
-use Ergonode\Account\Domain\ValueObject\Email;
+use Ergonode\Core\Domain\ValueObject\Color;
 use Faker\Provider\Base as BaseProvider;
 
 /**
  */
-class UserEmailFaker extends BaseProvider
+class ColorFaker extends BaseProvider
 {
     /**
-     * @param string $email
+     * @param string $color
      *
-     * @return Email
-     *
-     * @throws \Exception
+     * @return Color
      */
-    public function userEmail(string $email): Email
+    public function color(string $color): Color
     {
-        return new Email($email);
+        return new Color($color);
     }
 }
