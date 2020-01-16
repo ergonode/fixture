@@ -9,26 +9,26 @@ declare(strict_types = 1);
 
 namespace Ergonode\Fixture\Infrastructure\Faker;
 
-use Ergonode\Condition\Domain\ValueObject\ConditionSetCode;
+use Ergonode\Attribute\Domain\ValueObject\AttributeGroupCode;
 use Faker\Provider\Base as BaseProvider;
 
 /**
  */
-class ConditionSetCodeFaker extends BaseProvider
+class AttributeGroupCodeFaker extends BaseProvider
 {
     /**
      * @param string|null $code
      *
-     * @return ConditionSetCode
+     * @return AttributeGroupCode
      *
      * @throws \Exception
      */
-    public function conditionSetCode(?string $code = null): ConditionSetCode
+    public function attributeGroupCode(?string $code = null): AttributeGroupCode
     {
         if ($code) {
-            return new ConditionSetCode($code);
+            return new AttributeGroupCode($code);
         }
 
-        return new ConditionSetCode(sprintf('code_%s_%s', random_int(1, 1000000), random_int(1, 1000000)));
+        return new AttributeGroupCode(sprintf('code_%s_%s', random_int(1, 1000000), random_int(1, 1000000)));
     }
 }
